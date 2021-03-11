@@ -2,8 +2,37 @@
 {% load static %}
 {% block title %} Suas Playlists {% endblock %}
 
-{% block content %}
+<html lang = "en">
+    <head>
+    </head>
 
+    <body>
+    {% block content %}
+    <br>
+    <br>
+    <table id = 't01' style="width:100%">
+        <tr>
+          <th></th>
+          <th>Nome</th>
+          <th>Músicas</th>
+        </tr>
+        <tr>
+          <td>1</td>
+          <td>Playlist1</td>
+          <td>50</td>
+        </tr>
+        <tr>
+          <td>2</td>
+          <td>Playlist2</td>
+          <td>94</td>
+        </tr>
+      </table>
+    
+    
+    {% endblock %}
 
-{% endblock %}
+    
+        
+    </body>
+</html>
 

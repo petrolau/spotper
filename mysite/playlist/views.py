@@ -8,6 +8,9 @@ def home (request):
 def playlist (request):
     return render(request, 'playlist.html', {})
 
+def playlistIndividual (request):
+    return render(request, 'playlistInd.html', {})
+
 def newPlaylist (request):
     return render(request, 'newPlaylist.html', {})
 
