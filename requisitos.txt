@@ -1,0 +1,4 @@
+No virtual enviroment, baixar ->
+pip install Django
+pip install django-crispy-forms
+pip install Django requests
