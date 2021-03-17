@@ -7,9 +7,29 @@
     <head>
     </head>
 
+
     <body>
     {% block content %}
-    <button class = "button button1">Criar</button>
+    <br>
+    <br>
+    <br>
+
+    <div class = "inputs">
+        <h1 class = "inputtitle">Criar nova playlist</h1>
+        <p class = "input1title">Nome</p>
+        <input type="text" class = "input" maxlength="30" size="30" />
+        <br>
+        <p class = "input2title">Descrição</p>
+        <input type="text" class = "input2" maxlength="50" />
+        <br>
+        <p class = "input3title">Selecionar Músicas</p>
+        <!-- Preciso mostrar os albuns e musicas disponiveis -->
+        
+        
+
+        <button class = "button button1">Criar</button>
+    </div>
+
     {% endblock %}
 
     

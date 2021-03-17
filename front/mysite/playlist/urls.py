@@ -1,6 +1,7 @@
 from django.urls import path
 from . import views
 from django.contrib.staticfiles.urls import staticfiles_urlpatterns
+from django.conf.urls import url
 
 urlpatterns = [
     path('', views.home, name = 'home'),
@@ -9,5 +10,7 @@ urlpatterns = [
     path('newPlaylist',views.newPlaylist, name = 'newPlaylist'),
     path('albumList',views.albumList, name = 'albumList'),
     path('fullAlbum',views.fullAlbum, name = 'fullAlbum'),
+    path('registro',views.registro, name = 'registro'),
+    url(r'^registro/$', views.registro, name='registro'),
 
 ]

@@ -1,19 +1,41 @@
+{% extends 'home.html' %}
 {% load static %}
-<!doctype html>
-<html lang="en">
+{% block title %} Seus Álbuns {% endblock %}
+
   
     <head>
-        <meta charset="utf-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl" crossorigin="anonymous">
-        <link rel = "icon" href = "{% static 'images/music.png' %}">
-        <link rel="stylesheet" href="{%static '/style.css'%}">
+        
     </head>
   
     <body>
-        
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/js/bootstrap.bundle.min.js" integrity="sha384-b5kHyXgcpbZJO/tY9Ul7kGkf1S0CWuKcCD38l8YkeH8z8QjE0GmW1gYU5S9FOnJ0" crossorigin="anonymous"></script>
+        {% block content %}
+    <br>
+    <br>
+    <table id = 't01' style="width:100%">
+        <tr>
+          <th></th>
+          <th>Nome</th>
+          <th>Gravadora</th>
+          <th>Data de gravação</th>
+          <th>Preço de compra</th>
+          <th>Data de compra</th>
+          <th>Tipo de compra</th>
+        </tr>
+        <tr>
+          <td>1</td>
+          <td><a href="{% url 'fullAlbum' %}">Album1</td> </a>
+          <td>Gravadora1</td>
+          <td>Data gravaçao</td>
+          <td>Reais</td>
+          <td>Data compra</td>
+          <td>Virtual</td>
+
+        </tr>
+      </table>
+    
+    
+    {% endblock %}
+
 
     </body>
 
-</html>

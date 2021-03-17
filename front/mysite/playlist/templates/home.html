@@ -8,13 +8,14 @@
         <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl" crossorigin="anonymous">
         <link rel = "icon" href = "{% static 'images/music.png' %}">
         <link rel="stylesheet" href="{% static '/css/style.css' %}"> 
-        <title>{% block title %} Homepage {% endblock %}</title>
+        <title>{% block title %} Spotper {% endblock %}</title>
 
         <div class="topnav">
-          <a href="/">Spotper</a>
-          <a href="{% url 'playlist' %}">Ver Playlists</a>
-          <a href="{% url 'newPlaylist' %}">Criar nova playlist</a>
-          <a href="{% url 'albumList' %}">Ver álbuns</a>
+          <a href="/">Página Inicial</a>
+          <a href="{% url 'registro' %}">Registre-se</a>
+          <a href="{% url 'newPlaylist' %}">Criar uma nova playlist</a>
+          <a href="{% url 'playlist' %}">Suas playlists</a>
+          <a href="{% url 'albumList' %}">Seus álbuns</a>
         </div>
       
         
@@ -24,31 +25,17 @@
         
 
             {% block content %}
-            <br>
-            <br>
-            <br>
+            <br><br><br>
 
-            <section class = "socorro">
+            <h1 class = "homegreeting">Bem vindo ao spotper, {{request.user.username}}!</h1>
+            <br>
+            <section class = "containerpai">
             <div class = "container">
                 <img class = "pic" src="{% static '/images/music.png'%}" alt="Logo"  border = "0" >
             </div>
             </section>
             {% endblock %}
 
-            
-            
-
-            
-        
-           
-          
-
-        
-        
-        
-        
-       
-        
         
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/js/bootstrap.bundle.min.js" integrity="sha384-b5kHyXgcpbZJO/tY9Ul7kGkf1S0CWuKcCD38l8YkeH8z8QjE0GmW1gYU5S9FOnJ0" crossorigin="anonymous"></script>
     

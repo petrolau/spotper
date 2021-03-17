@@ -1,10 +1,19 @@
 body{
     background-color: #484d50;
+    margin: 0px;
+    padding: 0px;
             
 }
 
 
 /* Styling the main page */
+
+.homegreeting {
+  color: white;
+  font-size: 30px;
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+
 .pic
 {
     display: block;
@@ -13,25 +22,34 @@ body{
     width: 30%; 
     padding-top: 5%;
     padding-bottom: 10%;
+    max-width: 100%;
     
 }
+
+.button3 {background-color: #484d50;}
+
+/* Guarda imagem e o formulário */
+
 .container {
-    background-color: #ffcdd2 ;
-    padding-top: 50px;
-    padding-bottom: 50px;
-    padding-left: 10px;
+  background-color: #ffcdd2 ;
+  padding-top: 50px;
+  padding-bottom: 50px;
+  padding-left: 10px;
+
 }
 
-.socorro{
-    margin-left: auto;
-    margin-right: auto;
-    background-color:#ffcdd2 ;
+
+
+.containerpai{
+  margin-left: auto;
+  margin-right: auto;
+  background-color:#ffcdd2 ;
 }
 
 
 /*NAVBAR STYLE*/
 .topnav {
-    background-color: #484d50;
+    background-color: black;
     overflow: hidden;
   }
   
@@ -86,7 +104,7 @@ table,th, td {
 tr:hover {background-color:#cccccc;}
 
 
-/* Styling the button CRIAR */
+/* Styling the button CRIAR PLAYLIST*/
 
 .button {
     border: none;
@@ -101,6 +119,109 @@ tr:hover {background-color:#cccccc;}
   }
 
   .button1 {background-color: #ffcdd2;}
+
+/* Estilizando a página criar nova playlist */
+
+
+.input
+{
+  background-color: #484d50 ;
+  border-bottom: 1px solid white;
+  border-top: 1px solid white;
+  border-left: 1px solid white;
+  border-right: 1px solid white;
+  color: white;
+
+}
+
+.input2
+{
+  background-color: #484d50 ;
+  border-bottom: 1px solid white;
+  border-top: 1px solid white;
+  border-left: 1px solid white;
+  border-right: 1px solid white;
+  color: white;
+
+}
+
+
+.inputtitle
+{
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  color: white;
+  font-size: 30px;
+}
+
+.input1title
+{
+  color: white;
+  
+}
+
+.input2title
+{
+  color:white;
+}
+
+
+.inputs
+{
+  display: grid;
+  justify-content: space-evenly;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+
+/*LOGIN */ 
+.button4 {background-color: #ffcdd2;}
+
+
+
+/* Estilizando a página da playlist individual */
+
+.button2
+{
+  display:block;
+  height: 30px;
+  width: 30px;
+  border-radius: 50%;
+  background-color: #c4c4c4 ;
+  border: 1px solid #c4c4c4;
+  
+
+}
+
+.flexbox{
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  color: white;
+
+}
+.flexbox > div {
+  margin: 10px;
+}
+
+.button5 {
+  background-color: #ffcdd2;
+  margin: 250px 20px 4px 30px;
+}
+
+
+.pinksquare{
+  border: none;
+  background-color: #ffcdd2;
+  padding: 20px 20px;
+  width: 35%;
+  margin: 30px 0px 0px 30px;
+  max-width: 100%;
+}
+
+
+/* Estilizando album individual */
+
 
 
 

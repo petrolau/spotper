@@ -1,1 +1,53 @@
-{
+{% extends 'home.html' %}
+{% load static %}
+{% block title %} Álbum {% endblock %}
+
+
+<body>
+    {% block content %}
+    <section class="flexbox">
+      
+       <div class = "container3">
+       <img class = "pinksquare" src = "{% static '/images/petcare.png'%}"></p>
+      </div>
+      
+       <div class = "topo1">
+            <table id = 't01' style = "width: 100%;">
+                <tr>
+                    <th>Nome_Album</th>
+                    <th>Duração</th>
+            </table>
+       
+       </div>
+      
+    </section>
+  
+      <br>
+      <br>
+       <!-- O conjunto de musicas será diferente p/ cada playlist-->
+      <table id = 't01' style="width:100%">
+          <tr>
+            <th></th>
+            <th>Título</th>
+            <th>Compositores</th>
+            <th>Intérpretes</th>
+            <th>Álbum</th>
+            <th>Tipo de Composição</th>
+            <th>Tempo</th>
+          </tr>
+          <tr>
+            <td>1</td>
+            <td><a>nome_musica</td> </a>
+            <td>compositores</td>
+            <td>interpretes</td>
+            <td>nome_album</td>
+            <td>tipo_composiçao</td>
+            <td>tempo_musica</td>
+        </table>
+      
+  
+      {% endblock %}
+  
+  
+  </body>
+  
