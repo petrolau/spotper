@@ -3,3 +3,5 @@
 - BACKEND em Flask;
 - SGBD Sqlserver mssql;
 
+## Para baixar os requisitos no seu VENV PYTHON3, faça:
+`pip3 install -r requirements.txt `

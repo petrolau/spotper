@@ -6,7 +6,7 @@ from django.conf.urls import url
 urlpatterns = [
     path('', views.home, name = 'home'),
     path('playlist',views.playlist, name = 'playlist'),
-    path ('playlistIndividual',views.playlistIndividual, name = 'playlistIndividual'),
+    path('playlistIndividual/<int:id>/',views.playlistIndividual, name = 'playlistIndividual'),
     path('newPlaylist',views.newPlaylist, name = 'newPlaylist'),
     path('albumList',views.albumList, name = 'albumList'),
     path('fullAlbum',views.fullAlbum, name = 'fullAlbum'),

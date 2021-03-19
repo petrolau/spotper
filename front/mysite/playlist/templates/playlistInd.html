@@ -1,33 +1,30 @@
 {% extends 'home.html' %}
 {% load static %}
-{% block title %} Playlist {% endblock %}
+{% block title %} Playlist {{playInd.nome}} {% endblock %}
 
 <body>
   {% block content %}
-  <section class="flexbox">
-    
-     <div class = "container3">
-     <img class = "pinksquare" src = "{% static '/images/walking.png'%}"></p>
+
+ <div style = "display: flex; flex-direction: row; justify-content: space-between;">
+  <div class="card mb-3 stylecard" >
+    <div class="row g-0">
+      <div class="col-md-4">
+        <img src="{% static '/images/walking.png'%}" class=" img-fluid styleimage" alt="...">
+      </div>
+      <div class="col-md-8">
+        <div class="card-body">
+          <h5 class="card-title">{{playInd.nome}}</h5>
+          <p class="card-text">{{playInd.descricao}}</p>
+          <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+        </div>
+      </div>
     </div>
-    
-     <div class = "topo">
-     <!-- O nome será diferente p/ cada playlist-->
-     <p class = "playlistNome">Nome_playlist</p>
-     <!-- A duração será diferente p/ cada playlist-->
-     <p class = "Duracao">Duração</p>
-     <!-- A descrição será diferente p/ cada playlist-->
-     </div>
+  </div>
+  <button class = "button button5">Adicionar música</button>
+  </div>
 
-     <div class = "descr">
-     <p>Descrição</p>
-     </div>
-    
-    <button class = "button button5">Adicionar música</button>
-    
-  </section>
 
-    <br>
-    <br>
+   <br>
      <!-- O conjunto de musicas será diferente p/ cada playlist-->
     <table id = 't01' style="width:100%">
         <tr>
@@ -39,6 +36,7 @@
           <th>Tipo de Composição</th>
           <th>Tempo</th>
         </tr>
+
         <tr>
           <td>1</td>
           <td><a>nome_musica</td> </a>
@@ -46,7 +44,7 @@
           <td>interpretes</td>
           <td>nome_album</td>
           <td>tipo_composiçao</td>
-          <td>tempo_musica</td>
+          <td>tempo_musica</td>  
           <td><button class = " button2">x</button></td>
       </table>
     
@@ -55,3 +53,5 @@
 
 
 </body>
+
+

@@ -10,28 +10,28 @@
     {% block content %}
     <br>
     <br>
-    <table id = 't01' style="width:100%">
+    <table class="table table-striped">
+      <thead>
         <tr>
-          <th></th>
-          <th>Nome</th>
-          <th>Músicas</th>
+          <th scope="col"></th>
+          <th scope="col">Nome</th>
+          <th scope="col">Músicas</th>
+          <th scope="col">Data de criação</th>
         </tr>
+      </thead>
+      <tbody>
+        {% for p in playlist %}
         <tr>
-          <td>1</td>
-          <td><a href="{% url 'playlistIndividual' %}">Playlist1</td> </a>
-          <td>50</td>
+          <th scope="row">{{p.id}}</th>
+          <td><a href="{% url 'playlistIndividual' id=p.id %}">{{p.nome}}</a></td> 
+          <td><a href="{% url 'playlistIndividual' id=p.id %}">{{p.musicas}}</a></td>
+          <td><a href="{% url 'playlistIndividual' id=p.id %}">{{p.cria}}</a></td>
         </tr>
-        <tr>
-          <td>2</td>
-          <td>Playlist2</td>
-          <td>94</td>
-        </tr>
-        <tr>
-          <td>3</td>
-          <td>Playlist3</td>
-          <td>20</td>
-        </tr>
-      </table>
+        {% endfor %}
+        
+
+      </tbody>
+    </table>
     
     
     {% endblock %}

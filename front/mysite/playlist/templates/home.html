@@ -16,6 +16,8 @@
           <a href="{% url 'newPlaylist' %}">Criar uma nova playlist</a>
           <a href="{% url 'playlist' %}">Suas playlists</a>
           <a href="{% url 'albumList' %}">Seus álbuns</a>
+          <span class = "homegreeting">Bem vindo ao spotper, {{request.user.username}}!</span>
+
         </div>
       
         
@@ -27,7 +29,6 @@
             {% block content %}
             <br><br><br>
 
-            <h1 class = "homegreeting">Bem vindo ao spotper, {{request.user.username}}!</h1>
             <br>
             <section class = "containerpai">
             <div class = "container">
