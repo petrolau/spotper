@@ -128,7 +128,7 @@ tr:hover a {
 
 .button {
     border: none;
-    color: white;
+    color: black;
     padding: 15px 32px;
     text-align: center;
     text-decoration: none;
@@ -138,13 +138,17 @@ tr:hover a {
     cursor: pointer;
   }
 
-  .button1 {background-color: #ffcdd2;}
+  .button1 {background-color: #ffcdd2;
+    text-align: center;
+    margin: auto;
+    justify-content: center;
+    display: flex;
+    border-radius: 5%;}
 
 /* Estilizando a página criar nova playlist */
 
 
-.input
-{
+.input{
   background-color: #484d50 ;
   border-bottom: 1px solid white;
   border-top: 1px solid white;
@@ -154,8 +158,7 @@ tr:hover a {
 
 }
 
-.input2
-{
+.input2{
   background-color: #484d50 ;
   border-bottom: 1px solid white;
   border-top: 1px solid white;
@@ -166,36 +169,33 @@ tr:hover a {
 }
 
 
-.inputtitle
-{
+.inputtitle{
   font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
   color: white;
   font-size: 30px;
 }
 
-.input1title
-{
+.input1title{
   color: white;
   
 }
 
-.input2title
-{
-  color:white;
-}
 
-
-.inputs
-{
+.inputs{
   display: grid;
   justify-content: space-evenly;
   align-items: center;
   flex-wrap: wrap;
 }
 
+.accordion{
+  color:white;
+}
 
-/*LOGIN */ 
-.button4 {background-color: #ffcdd2;}
+.accordion-button{
+  color:white;
+}
+
 
 
 
@@ -213,34 +213,20 @@ tr:hover a {
 
 }
 
-.flexbox{
-  display: flex;
-  justify-content: space-between;
-  flex-wrap: wrap;
-  color: white;
-
-}
-.flexbox > div {
-  margin: 10px;
-}
-
 .button5 {
+  color: black;
   background-color: #ffcdd2;
   align-self: flex-end;
   justify-self: flex-end;
+  border-radius: 5%;
+
 
 }
 
-
-.pinksquare{
-  border: none;
-  background-color: #ffcdd2;
-  padding: 20px 20px;
-  width: 35%;
-  margin: 30px 0px 0px 30px;
-  max-width: 100%;
+.button5:hover
+{
+  color:#484d50;
 }
-
 
 .stylecard
 {
@@ -251,12 +237,60 @@ tr:hover a {
 
 
 
-/* Estilizando album individual */
+.modal-body {
+  overflow-x: auto;
+  background-color:#484d50 ;
+}
+
+.modal-header {
+  background-color: #484d50;
+}
+
+.modal-footer{
+  background-color: #484d50;
+}
+
+.modal-title{
+  color: white;
+}
+
+.button6 {
+
+  display:block;
+  height: 30px;
+  width: 30px;
+  border-radius: 50%;
+  background-color: #c4c4c4 ;
+  border: 1px solid #c4c4c4;
+  
+
+}
+
+.button7 {
+  color: black;
+  background-color: #ffcdd2;
+  align-self: flex-end;
+  justify-self: flex-end;
+  border-radius: 5%;
+
+
+}
+.button7:hover{
+  color: #484d50;
+}
 
 
 
 
+/*Register page */
 
+.button4{
+  color: black;
+  background-color: #ffcdd2;
+  align-self: flex-end;
+  justify-self: flex-end;
+  border-radius: 5%;
+}
 
 
 

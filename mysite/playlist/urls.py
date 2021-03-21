@@ -9,7 +9,7 @@ urlpatterns = [
     path('playlistIndividual/<int:id>/',views.playlistIndividual, name = 'playlistIndividual'),
     path('newPlaylist',views.newPlaylist, name = 'newPlaylist'),
     path('albumList',views.albumList, name = 'albumList'),
-    path('fullAlbum',views.fullAlbum, name = 'fullAlbum'),
+    path('fullAlbum/<int:id>/',views.fullAlbum, name = 'fullAlbum'),
     path('registro',views.registro, name = 'registro'),
     url(r'^registro/$', views.registro, name='registro'),
 

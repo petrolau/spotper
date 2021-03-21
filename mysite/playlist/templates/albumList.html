@@ -3,40 +3,47 @@
 {% block title %} Seus Álbuns {% endblock %}
 
   
-    <head>
-        
-    </head>
   
-    <body>
-        {% block content %}
+    {% block content %}
     <br>
     <br>
-    <table id = 't01' style="width:100%">
-          <tr>
-          <th></th>
-          <th>Nome</th>
-          <th>Gravadora</th>
-          <th>Data de gravação</th>
-          <th>Preço de compra</th>
-          <th>Data de compra</th>
-          <th>Tipo de compra</th>
-        </tr>
+    <table class="table table-striped">
+      <thead>
         <tr>
-          <td>1</td>
-          <td><a href="{% url 'fullAlbum' %}">Album1</td></a>
-          <td>Gravadora1</td>
-          <td>Data gravaçao</td>
-          <td>Reais</td>
-          <td>Data compra</td>
-          <td>Virtual</td>
+          <th scope="col"></th>
+          <th scope="col">Nome</th>
+          <th scope="col">Gravadora</th>
+          <th scope="col">Data de gravação</th>
+          <th scope="col">Preço de compra</th>
+          <th scope="col">Data de compra</th>
+          <th scope="col">Tipo de compra</th>
+
+
 
         </tr>
-      </table>
+      </thead>
+      <tbody>
+        {% for a in listagemAlbum %}
+        <tr>
+          <th scope="row">{{a.id}}</th>
+          <td><a href="{% url 'fullAlbum' id=a.id %}">{{a.nome}}</a></td> 
+          <td><a href="{% url 'fullAlbum' id=a.id %}">{{a.gravadora}}</a></td>
+          <td><a href="{% url 'fullAlbum' id=a.id %}">{{a.datagravacao}}</a></td>
+          <td><a href="{% url 'fullAlbum' id=a.id %}">{{a.precocompra}}</a></td> 
+          <td><a href="{% url 'fullAlbum' id=a.id %}">{{a.datacompra}}</a></td> 
+          <td><a href="{% url 'fullAlbum' id=a.id %}">{{a.tipocompra}}</a></td> 
+
+        </tr>
+        {% endfor %}
+        
+
+      </tbody>
+    </table>
     
     
     {% endblock %}
 
 
-    </body>
+    
 
 

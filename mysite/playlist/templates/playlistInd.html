@@ -15,37 +15,134 @@
         <div class="card-body">
           <h5 class="card-title">{{playInd.nome}}</h5>
           <p class="card-text">{{playInd.descricao}}</p>
-          <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+          <p class="card-text"><small class="text-muted">{{playInd.quant}}</small></p>
         </div>
       </div>
     </div>
   </div>
-  <button class = "button button5">Adicionar música</button>
-  </div>
+  <!-- Button trigger modal -->
+  <button type="button" class="btn  button5" data-bs-toggle="modal" data-bs-target="#staticBackdrop">
+  Adicionar Músicas
+  </button>
 
+<!-- Modal -->
+<div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Faixas disponíveis</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <table class="table table-striped">
+       <thead>
+         <tr>
+           <th scope="col"></th>
+           <th scope="col">Título</th>
+           <th scope="col">Compositores</th>
+           <th scope="col">Intérpretes</th>
+           <th scope="col">Álbum</th>
+           <th scope="col">Tipo de Composição</th>
+           <th scope="col">Tempo</th>
+           <th scope="col"></th>
+         </tr>
+       </thead>
+       <tbody>
+         <tr>
+           <th scope="row">1</th>
+           <td>nome_musica</a></td> 
+           <td>compositores</a></td>
+           <td>interpretes</a></td>
+           <td>nome_album</a></td>
+           <td>tipo_composição</a></td>
+           <td>tempo_musica</a></td>
+           <td><button class = " button6">+</button></td>
 
-   <br>
-     <!-- O conjunto de musicas será diferente p/ cada playlist-->
-    <table id = 't01' style="width:100%">
-        <tr>
-          <th></th>
-          <th>Título</th>
-          <th>Compositores</th>
-          <th>Intérpretes</th>
-          <th>Álbum</th>
-          <th>Tipo de Composição</th>
-          <th>Tempo</th>
+         </tr>
+
+         <tr>
+          <th scope="row">1</th>
+          <td>nome_musica</a></td> 
+          <td>compositores</a></td>
+          <td>interpretes</a></td>
+          <td>nome_album</a></td>
+          <td>tipo_composição</a></td>
+          <td>tempo_musica</a></td>
+          <td><button class = " button6">+</button></td>
+
         </tr>
 
         <tr>
-          <td>1</td>
-          <td><a>nome_musica</td> </a>
-          <td>compositores</td>
-          <td>interpretes</td>
-          <td>nome_album</td>
-          <td>tipo_composiçao</td>
-          <td>tempo_musica</td>  
-          <td><button class = " button2">x</button></td>
+          <th scope="row">1</th>
+          <td>nome_musica</a></td> 
+          <td>compositores</a></td>
+          <td>interpretes</a></td>
+          <td>nome_album</a></td>
+          <td>tipo_composição</a></td>
+          <td>tempo_musica</a></td>
+          <td><button class = " button6">+</button></td>
+
+        </tr>
+
+        <tr>
+          <th scope="row">1</th>
+          <td>nome_musica</a></td> 
+          <td>compositores</a></td>
+          <td>interpretes</a></td>
+          <td>nome_album</a></td>
+          <td>tipo_composição</a></td>
+          <td>tempo_musica</a></td>
+          <td><button class = " button6">+</button></td>
+
+        </tr>
+         
+ 
+       </tbody>
+     
+      </table>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Fechar</button>
+        <button type="button" class="btn button7">Salvar mudanças</button>
+      </div>
+    </div>
+  </div>
+</div>
+  </div>
+
+
+     <!-- O conjunto de musicas será diferente p/ cada playlist-->
+     <br>
+     <br>
+     <table class="table table-striped">
+       <thead>
+         <tr>
+           <th scope="col"></th>
+           <th scope="col">Título</th>
+           <th scope="col">Compositores</th>
+           <th scope="col">Intérpretes</th>
+           <th scope="col">Álbum</th>
+           <th scope="col">Tipo de Composição</th>
+           <th scope="col">Tempo</th>
+           <th scope="col"></th>
+         </tr>
+       </thead>
+       <tbody>
+         <tr>
+           <th scope="row">1</th>
+           <td>nome_musica</a></td> 
+           <td>compositores</a></td>
+           <td>interpretes</a></td>
+           <td>nome_album</a></td>
+           <td>tipo_composição</a></td>
+           <td>tempo_musica</a></td>
+           <td><button class = " button2">x</button></td>
+
+         </tr>
+         
+ 
+       </tbody>
+     
       </table>
     
 

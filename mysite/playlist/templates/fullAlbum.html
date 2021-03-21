@@ -1,50 +1,55 @@
 {% extends 'home.html' %}
 {% load static %}
-{% block title %} Álbum {% endblock %}
+{% block title %} Álbum {{fullAlb.nome}} {% endblock %}
 
 
 <body>
     {% block content %}
-    <section class="flexbox">
-      
-       <div class = "container3">
-       <img class = "pinksquare" src = "{% static '/images/petcare.png'%}"></p>
+      <div class="card mb-3 stylecard" >
+        <div class="row g-0">
+          <div class="col-md-4">
+            <img src="{% static '/images/pet.png'%}" class=" img-fluid styleimage" alt="...">
+          </div>
+          <div class="col-md-8">
+            <div class="card-body">
+              <h5 class="card-title">{{fullAlb.nome}}</h5>
+              <p class="card-text">{{fullAlb.duracao}}</p>
+            </div>
+          </div>
+        </div>
       </div>
-      
-       <div class = "topo1">
-            <table id = 't01' style = "width: 100%;">
-                <tr>
-                    <th>Nome_Album</th>
-                    <th>Duração</th>
-            </table>
-       
-       </div>
-      
-    </section>
-  
-      <br>
-      <br>
+    
        <!-- O conjunto de musicas será diferente p/ cada playlist-->
-      <table id = 't01' style="width:100%">
-          <tr>
-            <th></th>
-            <th>Título</th>
-            <th>Compositores</th>
-            <th>Intérpretes</th>
-            <th>Álbum</th>
-            <th>Tipo de Composição</th>
-            <th>Tempo</th>
-          </tr>
-          <tr>
-            <td>1</td>
-            <td><a>nome_musica</td> </a>
-            <td>compositores</td>
-            <td>interpretes</td>
-            <td>nome_album</td>
-            <td>tipo_composiçao</td>
-            <td>tempo_musica</td>
+       <br>
+       <br>
+       <table class="table table-striped">
+         <thead>
+           <tr>
+             <th scope="col"></th>
+             <th scope="col">Título</th>
+             <th scope="col">Compositores</th>
+             <th scope="col">Intérpretes</th>
+             <th scope="col">Álbum</th>
+             <th scope="col">Tipo de Composição</th>
+             <th scope="col">Tempo</th>
+           </tr>
+         </thead>
+         <tbody>
+           <tr>
+             <th scope="row">1</th>
+             <td>nome_musica</a></td> 
+             <td>compositores</a></td>
+             <td>interpretes</a></td>
+             <td>nome_album</a></td>
+             <td>tipo_composição</a></td>
+             <td>tempo_musica</a></td>
+  
+           </tr>
+
+   
+         </tbody>
+       
         </table>
-      
   
       {% endblock %}
   
