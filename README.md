@@ -9,7 +9,7 @@
 ## Para rodar o aplicativo, inicie o seu virtual enviroment e faça o seguinte:
 obs: No ubuntu.
 
-`source vev/bin/activate`
+`source venv/bin/activate`
 
 Entre na pasta mysite/ que possui o arquivo MANAGE.PY e faça:
 
