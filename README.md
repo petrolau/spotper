@@ -3,6 +3,12 @@
 - BACKEND em Flask;
 - SGBD Sqlserver mssql;
 
+### Para atualizar os pacotes do seu VENV PYTHON3, faça:
+
+Caso não tivesse o arquivo de requirements.
+
+`pip freeze > requirements.txt`
+
 ## Para baixar os requisitos no seu VENV PYTHON3, faça:
 `pip3 install -r requirements.txt `
 
