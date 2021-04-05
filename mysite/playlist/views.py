@@ -2,6 +2,8 @@ from django.contrib.auth import login, authenticate
 from django.contrib.auth.forms import UserCreationForm
 from django.shortcuts import render, redirect
 from django.contrib import messages
+from datetime import datetime
+from django.http import HttpResponseRedirect
 import requests
 
 # Create your views here.
@@ -12,86 +14,41 @@ def home (request):
 
 
 def playlist (request):
-    #response = requests.get(f'{api_url}/playlist')
-    response = [
-        {
-            "id": 1,
-            "nome": "playlist", 
-            "musicas" : 5,
-            "cria" : "hoje"
-        },
-        {
-            "id": 2,
-            "nome": "playlist", 
-            "musicas" : 5,
-            "cria" : "hoje"
-        },
-        {
-            "id": 3,
-            "nome": "playlist", 
-            "musicas" : 5,
-            "cria" : "hoje"
-        },
-    ]
-    #response = response.json()
-    return render(request, 'playlist.html', {"playlist":response})
+    listaPlaylist =requests.get(f'{api_url}/playlist')
+    listaPlaylist = listaPlaylist.json()
+    return render(request, 'playlist.html', {"listaPlaylist":listaPlaylist})
 
-
-#Tentar pegar a lista de albuns do banco de verdade
-#response = requests.get(url)
-#albuns = response.json() 
-#return render(request, 'fullAlbum.html',{"response":response})
 
 def playlistIndividual (request, id = 1):
-    #details = requests.get(f'{api_url}/playlist/{id}')
-    #songs = requests.get(f'{api_url}/playlist/{id}/songs')
-    playInd = {
-        "nome" : "eeeeeee",
-        "descricao": "deu certo",
-        "quant" : "300 musicas, 3h20min"
-    }
-    if id == 2:
-        playInd = {
-        "nome" : "asdasd",
-        "descricao": "show",
-        "quant" : "250 musicas, 2h40min"
+    playInd = requests.get(f'{api_url}/playlist/{id}')
+    playInd = playInd.json()
+    faiPlay = requests.get(f'{api_url}/faixaplaylist/{id}')
+    faiPlay = faiPlay.json()
+    faiLista = requests.get(f'{api_url}/faixa')
+    faiLista = faiLista.json()
 
-    }
-    return render(request, 'playlistInd.html', {"playInd": playInd})
+
+    return render(request, 'playlistInd.html', {"playInd": playInd, "faiPlay":faiPlay, "faiLista":faiLista})
 
 def newPlaylist (request):
-    return render(request, 'newPlaylist.html', {})
+    criaPlaylist = requests.post(f'{api_url}/playlist')
+    return render(request, 'newPlaylist.html', {"criaPlaylist":criaPlaylist})
 
 def albumList (request):
-    listagemAlbum = [
-        {
-            "id": 1,
-            "nome": "album1", 
-            "gravadora" : "nome_gravadora",
-            "datagravacao" : "15/02/2020",
-            "precocompra" : "R$2500,00",
-            "datacompra" : "24/07/1971",
-            "tipocompra" : "virtual"
-
-        },
-       
-    ]
-    return render(request, 'albumList.html', {"listagemAlbum":listagemAlbum})
+    listagemAlbum = requests.get(f'{api_url}/album')
+    gravadora = requests.get(f'{api_url}/gravadora')
+    listagemAlbum = listagemAlbum.json()
+    gravadora = gravadora.json()
+    return render(request, 'albumList.html', {"listagemAlbum":listagemAlbum,"gravadora":gravadora})
 
 
 
 def fullAlbum (request, id = 1):
-    fullAlb = {
-        "nome" : "eeeeeee",
-        "duracao": "3h20min"
-    }
-    if id == 2:
-        fullAlb = {
-        "nome" : "uhul",
-        "duracao": "3h"
-
-    }
-    return render(request, 'fullAlbum.html', {"fullAlb":fullAlb})
+    fullAlb = requests.get(f'{api_url}/album/{id}')
+    fullAlb = fullAlb.json()
+    faiAlb = requests.get(f'{api_url}/faixa/{id}')
+    faiAlb = faiAlb.json()
+    return render(request,'fullAlbum.html', {"fullAlb":fullAlb,"faiAlb":faiAlb})
 
     
 def registro (request):

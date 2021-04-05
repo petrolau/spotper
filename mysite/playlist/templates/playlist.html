@@ -20,12 +20,12 @@
         </tr>
       </thead>
       <tbody>
-        {% for p in playlist %}
+        {% for p in listaPlaylist %}
         <tr>
           <th scope="row">{{p.id}}</th>
           <td><a href="{% url 'playlistIndividual' id=p.id %}">{{p.nome}}</a></td> 
-          <td><a href="{% url 'playlistIndividual' id=p.id %}">{{p.musicas}}</a></td>
-          <td><a href="{% url 'playlistIndividual' id=p.id %}">{{p.cria}}</a></td>
+          <td><a href="{% url 'playlistIndividual' id=p.id %}">Número de músicas</a></td>
+          <td><a href="{% url 'playlistIndividual' id=p.id %}">{{p.data_criacao}}</a></td>
         </tr>
         {% endfor %}
         

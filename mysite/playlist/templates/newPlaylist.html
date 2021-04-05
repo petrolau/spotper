@@ -13,70 +13,19 @@
     <br>
     <br>
     <br>
-
+    <form action = "/playlist" method = "post">{% csrf_token %}
     <div class = "inputs">
         <h1 class = "inputtitle">Criar nova playlist</h1>
-        <p class = "input1title">Nome</p>
-        <input type="text" class = "input" maxlength="30" size="30" />
+        <label for "playlist" class = "input1title">Nome </label>
+        <input id = "playlist" type = "text" name = "playlist" maxlength="30" size="30"  value ="{{criaPlaylist.nome}}">{% csrf_token %}
         <br>
-        <p class = "input1title">Descrição</p>
-        <input type="text" class = "input2" maxlength="50" />
         <br>
-        <p class = "input1title">Selecionar Músicas</p>
-        <!-- Preciso mostrar os albuns e musicas disponiveis -->
-        <div class="accordion accordion-flush" id="accordionExample">
-            <div class="accordion-item">
-              <h2 class="accordion-header" id="headingOne">
-                <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
-                  Álbum 1
-                </button>
-              </h2>
-              <div id="collapseOne" class="accordion-collapse collapse show" aria-labelledby="headingOne" data-bs-parent="#accordionExample">
-                <div class="accordion-body">
-                    <table class="table table-striped">
-                        <thead>
-                          <tr>
-                            <th scope="col"></th>
-                            <th scope="col">Título</th>
-                            <th scope="col">Compositores</th>
-                            <th scope="col">Intérpretes</th>
-                            <th scope="col">Álbum</th>
-                            <th scope="col">Tipo de Composição</th>
-                            <th scope="col">Tempo</th>
-                            <th scope="col"></th>
-                          </tr>
-                        </thead>
-                        <tbody>
-                          <tr>
-                            <th scope="row">1</th>
-                            <td>nome_musica</a></td> 
-                            <td>compositores</a></td>
-                            <td>interpretes</a></td>
-                            <td>nome_album</a></td>
-                            <td>tipo_composição</a></td>
-                            <td>tempo_musica</a></td>
-                            <td><button class = " button2">+</button></td>
-                          </tr>
-                          <tr>
-                            <th scope="row">1</th>
-                            <td>nome_musica</a></td> 
-                            <td>compositores</a></td>
-                            <td>interpretes</a></td>
-                            <td>nome_album</a></td>
-                            <td>tipo_composição</a></td>
-                            <td>tempo_musica</a></td>
-                            <td><button class = " button2">+</button></td>
-                          </tr>
-                        </tbody>
-                       </table>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
+        <label for "playlist" class = "input1title">Descrição</label>
+        <input id = "playlist" type = "text" name = "playlist" maxlength="50" size="30"  form = "form" value ="{{criaPlaylist.descricao}}">{% csrf_token %}
+        <br>
     <br>
-    <button class = "button button1">Criar</button>
-
+        <button class = "button button1" input type = "submit" name = "foo" value = "criar" >Criar</button>
+    </form>
     {% endblock %}
 
     

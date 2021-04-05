@@ -19,19 +19,20 @@
           <th scope="col">Tipo de compra</th>
 
 
-
+          
+         
         </tr>
       </thead>
       <tbody>
         {% for a in listagemAlbum %}
         <tr>
-          <th scope="row">{{a.id}}</th>
-          <td><a href="{% url 'fullAlbum' id=a.id %}">{{a.nome}}</a></td> 
-          <td><a href="{% url 'fullAlbum' id=a.id %}">{{a.gravadora}}</a></td>
-          <td><a href="{% url 'fullAlbum' id=a.id %}">{{a.datagravacao}}</a></td>
-          <td><a href="{% url 'fullAlbum' id=a.id %}">{{a.precocompra}}</a></td> 
-          <td><a href="{% url 'fullAlbum' id=a.id %}">{{a.datacompra}}</a></td> 
-          <td><a href="{% url 'fullAlbum' id=a.id %}">{{a.tipocompra}}</a></td> 
+          <th scope="row">{{a.cod}}</th>
+          <td><a href="{% url 'fullAlbum' id=a.cod %}">{{a.nome}}</a></td> 
+          <td><a href="{% url 'fullAlbum' id=a.cod %}">{{a.cod_gravadora}}</a></td>
+          <td><a href="{% url 'fullAlbum' id=a.cod %}">{{a.data_gravacao}}</a></td>
+          <td><a href="{% url 'fullAlbum' id=a.cod %}">{{a.preco_compra}}</a></td> 
+          <td><a href="{% url 'fullAlbum' id=a.cod %}">{{a.data_compra}}</a></td> 
+          <td><a href="{% url 'fullAlbum' id=a.cod %}"></a>{{a.tipo_compra}}</a></td> 
 
         </tr>
         {% endfor %}
