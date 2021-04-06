@@ -48,17 +48,18 @@
          </tr>
        </thead>
        <tbody>
+         <form action="localhost:5000/faixaplaylist/id" method="post">
          {% for f in faiLista %}
          <tr>
            <th scope="row">{{f.id}}</th>
            <td>{{f.nome}}</td> 
-           <td>compositores</td>
-           <td>interpretes</td>
+           <td>{{f.nome_compositor}}</td>
+           <td>{{f.nome_interprete}}</td>
            <td>{{f.album}}</td>
            <td>{{f.tipo_composicao}}</a></td>
            <td>{{f.duracao}}</td>
-           <td><button class = " button6">+</button></td>
-
+           <td><button class = " button6" type = "submit" formmethod = "post">+</button></td>
+          </form>
          </tr>
          {% endfor %}
          
@@ -69,7 +70,7 @@
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Fechar</button>
-        <button type="button" class="btn button7">Salvar mudanças</button>
+        <button type="button" class="btn button7" onClick = "window.location.reload();">Salvar mudanças</button>
       </div>
     </div>
   </div>
@@ -96,13 +97,13 @@
        <tbody>
          {% for m in faiPlay %} 
          <tr>
-           <th scope="row">{{m.id_faixa}}</th>
-           <td>{{m.nome}}</a></td> 
+           <th scope="row">{{m.id_playlist}}</th>
+           <td>{{m.nome_musica}}</a></td> 
            <td>{{m.nome_compositor}}</a></td>
            <td>{{m.nome_interprete}}</a></td>
-           <td>{{m.album}}</a></td>
-           <td>{{m.tipo_composicao}}</a></td>
-           <td>{{m.duracao}}</a></td>
+           <td>{{m.nome_album}}</a></td>
+           <td>{{m.nome_composicao}}</a></td>
+           <td>{{m.duracao_musica}}</a></td>
            <td><button class = " button2">x</button></td>
 
          </tr>

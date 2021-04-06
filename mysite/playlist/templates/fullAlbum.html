@@ -37,13 +37,13 @@
          <tbody>
            {% for f in faiAlb %}
            <tr>
-             <th scope="row">{{faiAlb.id_faixa_album}}</th>
-             <td>{{faiAlb.nome}}</td> 
-             <td>{{faiAlb.compositores}}</td>
-             <td>{{faiAlb.interpretes}}</td>
-             <td>{{faiAlb.album}}</td>
-             <td>{{faiAlb.tipo_composição}}</td>
-             <td>{{faiAlb.duracao}}</td>
+             <th scope="row">{{f.id_faixa_album}}</th>
+             <td>{{f.nome}}</td> 
+             <td>{{f.nome_compositor}}</td>
+             <td>{{f.nome_interprete}}</td>
+             <td>{{f.album}}</td>
+             <td>{{f.nome_composicao}}</td>
+             <td>{{f.duracao}}</td>
   
            </tr>
            {% endfor %}

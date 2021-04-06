@@ -1,3 +1,5 @@
+
+
 {% extends 'home.html' %}
 {% load static %}
 {% block title %} Nova Playlist {% endblock %}
@@ -13,18 +15,20 @@
     <br>
     <br>
     <br>
-    <form action = "/playlist" method = "post">{% csrf_token %}
+    <form action = "localhost:5000/playlist" method = "post">
+    {% csrf_token %}
     <div class = "inputs">
         <h1 class = "inputtitle">Criar nova playlist</h1>
-        <label for "playlist" class = "input1title">Nome </label>
-        <input id = "playlist" type = "text" name = "playlist" maxlength="30" size="30"  value ="{{criaPlaylist.nome}}">{% csrf_token %}
+        <label for "nome" class = "input1title">Nome </label>
+        <input id = "localhost:5000/playlist" type = "text" name = "playlist" maxlength="30" size="30"  value ="{{criaPlaylist.nome}}">{% csrf_token %}
         <br>
         <br>
-        <label for "playlist" class = "input1title">Descrição</label>
-        <input id = "playlist" type = "text" name = "playlist" maxlength="50" size="30"  form = "form" value ="{{criaPlaylist.descricao}}">{% csrf_token %}
+        <label for "descricao" class = "input1title">Descrição</label>
+        <input id = "localhost:5000/playlist" type = "text" name = "playlist" maxlength="50" size="30"  form = "form" value ="{{criaPlaylist.descricao}}">{% csrf_token %}
         <br>
     <br>
-        <button class = "button button1" input type = "submit" name = "foo" value = "criar" >Criar</button>
+        <button class = "button button1" input type = "submit"  value = "criar" >Criar</button>
+    </div>
     </form>
     {% endblock %}
 

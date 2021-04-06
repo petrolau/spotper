@@ -4,6 +4,8 @@ from django.shortcuts import render, redirect
 from django.contrib import messages
 from datetime import datetime
 from django.http import HttpResponseRedirect
+from django.http import JsonResponse
+from .forms import playForm
 import requests
 
 # Create your views here.
@@ -26,12 +28,14 @@ def playlistIndividual (request, id = 1):
     faiPlay = faiPlay.json()
     faiLista = requests.get(f'{api_url}/faixa')
     faiLista = faiLista.json()
+    addFaixa = requests.post(f'{api_url}/faixaplaylist/{id}')
 
 
-    return render(request, 'playlistInd.html', {"playInd": playInd, "faiPlay":faiPlay, "faiLista":faiLista})
+    return render(request, 'playlistInd.html', {"playInd": playInd, "faiPlay":faiPlay, "faiLista":faiLista,"addFaixa":addFaixa})
 
+##problema com form.
 def newPlaylist (request):
-    criaPlaylist = requests.post(f'{api_url}/playlist')
+    criaPlaylist = requests.post(f'{api_url}/playlist') 
     return render(request, 'newPlaylist.html', {"criaPlaylist":criaPlaylist})
 
 def albumList (request):
