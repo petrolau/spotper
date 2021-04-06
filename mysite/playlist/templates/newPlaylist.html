@@ -19,15 +19,15 @@
     {% csrf_token %}
     <div class = "inputs">
         <h1 class = "inputtitle">Criar nova playlist</h1>
-        <label for "nome" class = "input1title">Nome </label>
+        <label for "localhost:5000/playlist" class = "input1title">Nome </label>
         <input id = "localhost:5000/playlist" type = "text" name = "playlist" maxlength="30" size="30"  value ="{{criaPlaylist.nome}}">{% csrf_token %}
         <br>
         <br>
-        <label for "descricao" class = "input1title">Descrição</label>
+        <label for "localhost:5000/playlist" class = "input1title">Descrição</label>
         <input id = "localhost:5000/playlist" type = "text" name = "playlist" maxlength="50" size="30"  form = "form" value ="{{criaPlaylist.descricao}}">{% csrf_token %}
         <br>
     <br>
-        <button class = "button button1" input type = "submit"  value = "criar" >Criar</button>
+        <input type = "submit" button class = "button button1" value = "Criar" ></button>
     </div>
     </form>
     {% endblock %}
