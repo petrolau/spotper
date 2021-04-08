@@ -76,7 +76,8 @@
                  </tr>
                </thead>
                <tbody>
-                 <form action="localhost:5000/faixaplaylist/id" method="post">
+                 <form action="https://localhost:5000/faixaplaylist/" method="post">
+                  {{ csrf_token }}
                  {% for p in playAlb %}
                  <tr>
                    <th scope="row">{{f.id}}</th>
@@ -84,7 +85,7 @@
                    <td>{{p.num_musicas}}</td>
                    <td>{{p.data_criacao}}</td>
                   
-                   <td><button class = " button6" type = "submit" formmethod = "post">+</button></td>
+                   <td><button class = " button6" type = "submit" formmethod = "post" onclick="">+</button></td>
                   </form>
                  </tr>
                  {% endfor %}

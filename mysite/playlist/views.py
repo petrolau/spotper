@@ -27,15 +27,14 @@ def playlistIndividual (request, id = 1):
     faiPlay = faiPlay.json()
     faiLista = requests.get(f'{api_url}/faixa')
     faiLista = faiLista.json()
-    addFaixa = requests.post(f'{api_url}/faixaplaylist/{id}')
 
-    return render(request, 'playlistInd.html', {"playInd": playInd, "faiPlay":faiPlay, "faiLista":faiLista,"addFaixa":addFaixa})
+    return render(request, 'playlistInd.html', {"playInd": playInd, "faiPlay":faiPlay, "faiLista":faiLista})
 
 
 
 
 def newPlaylist (request):
-    criaPlaylist = requests.post(f'{api_url}/playlist') 
+    criaPlaylist = requests.post(f'{api_url}/playlist')
     return render(request, 'newPlaylist.html', {"criaPlaylist":criaPlaylist})
 
 
@@ -55,7 +54,8 @@ def fullAlbum (request, id = 1):
     faiAlb = faiAlb.json()
     playAlb = requests.get(f'{api_url}/playlist')
     playAlb = playAlb.json()
-    return render(request,'fullAlbum.html', {"fullAlb":fullAlb,"faiAlb":faiAlb,"playAlb":playAlb})
+    addFaiPlay = requests.post(f'{api_url}/faixaplaylist/{id}')
+    return render(request,'fullAlbum.html', {"fullAlb":fullAlb,"faiAlb":faiAlb,"playAlb":playAlb,"addFaiPlay":addFaiPlay})
 
     
 def registro (request):
