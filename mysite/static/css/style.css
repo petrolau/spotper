@@ -184,7 +184,6 @@ tr:hover a {
 .inputs{
   display: grid;
   justify-content: space-evenly;
-  align-items: center;
   flex-wrap: wrap;
 }
 

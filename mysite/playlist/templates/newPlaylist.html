@@ -14,22 +14,23 @@
     {% block content %}
     <br>
     <br>
-    <br>
-    <form action = "localhost:5000/playlist" method = "post">
-    {% csrf_token %}
-    <div class = "inputs">
-        <h1 class = "inputtitle">Criar nova playlist</h1>
-        <label for "localhost:5000/playlist" class = "input1title">Nome </label>
-        <input id = "localhost:5000/playlist" type = "text" name = "playlist" maxlength="30" size="30"  value ="{{criaPlaylist.nome}}">{% csrf_token %}
+    <form action="http://localhost:5000/playlist" method="post">
+        {% csrf_token %}
+       <div class="inputs">
+        <div class="form-group">
+          <h1 class="inputtitle">Criar nova playlist</h1>
+          <label for="nome" class="input1title">Nome da playlist</label>
+          <input type="text" class="form-control" id="nome" name="nome" aria-describedby="nameHelp" placeholder="Insira o nome">
+          <small id="nameHelp" class="form-text text-muted">Até 30 caracteres são permitidos.</small>
+        </div>
+        <div class="form-group">
+          <label for="descricao" class = "input1title">Descrição da playlist</label>
+          <input type="text" class="form-control" id="descricao" name="descricao" placeholder="Descrição">
+        </div>
         <br>
-        <br>
-        <label for "localhost:5000/playlist" class = "input1title">Descrição</label>
-        <input id = "localhost:5000/playlist" type = "text" name = "playlist" maxlength="50" size="30"  form = "form" value ="{{criaPlaylist.descricao}}">{% csrf_token %}
-        <br>
-    <br>
-        <input type = "submit" button class = "button button1" value = "Criar" ></button>
-    </div>
-    </form>
+        <button type="submit" class=" button button1">Enviar</button>
+    </div> 
+      </form>
     {% endblock %}
 
     

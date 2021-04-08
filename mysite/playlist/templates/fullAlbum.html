@@ -13,7 +13,8 @@
           <div class="col-md-8">
             <div class="card-body">
               <h5 class="card-title">{{fullAlb.nome}}</h5>
-              <p class="card-text">{{fullAlb.duracao}}</p>
+              <p class="card-text">{{fullAlb.num_musicas}} músicas,{{fullAlb.tempo_total}}min. </p>
+
             </div>
           </div>
         </div>
@@ -32,6 +33,7 @@
              <th scope="col">Álbum</th>
              <th scope="col">Tipo de Composição</th>
              <th scope="col">Tempo</th>
+             <th scope = "col"></th>
            </tr>
          </thead>
          <tbody>
@@ -44,14 +46,62 @@
              <td>{{f.album}}</td>
              <td>{{f.nome_composicao}}</td>
              <td>{{f.duracao}}</td>
+             <td><button type="button" class="button6" data-bs-toggle="modal" data-bs-target="#staticBackdrop">
+              +
+              </button></td>
   
            </tr>
            {% endfor %}
-
-   
          </tbody>
        
         </table>
+
+        <!--Modal-->
+        <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+          <div class="modal-dialog">
+            <div class="modal-content">
+              <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">Adicionar a playlist</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+              </div>
+              <div class="modal-body">
+                <table class="table table-striped">
+               <thead>
+                 <tr>
+                   <th scope="col"></th>
+                   <th scope="col">Nome</th>
+                   <th scope="col">Músicas</th>
+                   <th scope="col">Data criação</th>
+                   <th scope="col"></th>
+                 </tr>
+               </thead>
+               <tbody>
+                 <form action="localhost:5000/faixaplaylist/id" method="post">
+                 {% for p in playAlb %}
+                 <tr>
+                   <th scope="row">{{f.id}}</th>
+                   <td>{{p.nome}}</td> 
+                   <td>{{p.num_musicas}}</td>
+                   <td>{{p.data_criacao}}</td>
+                  
+                   <td><button class = " button6" type = "submit" formmethod = "post">+</button></td>
+                  </form>
+                 </tr>
+                 {% endfor %}
+                 
+         
+               </tbody>
+             
+              </table>
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Fechar</button>
+              <button type="button" class="btn button7" onClick = "window.location.reload();">Salvar mudanças</button>
+            </div>
+          </div>
+        </div>
+      </div>
+        </div>
   
       {% endblock %}
   

@@ -16,6 +16,7 @@
           <th scope="col"></th>
           <th scope="col">Nome</th>
           <th scope="col">Músicas</th>
+          <th scope="col">Tempo total</th>
           <th scope="col">Data de criação</th>
         </tr>
       </thead>
@@ -24,7 +25,8 @@
         <tr>
           <th scope="row">{{p.id}}</th>
           <td><a href="{% url 'playlistIndividual' id=p.id %}">{{p.nome}}</a></td> 
-          <td><a href="{% url 'playlistIndividual' id=p.id %}">Número de músicas</a></td>
+          <td><a href="{% url 'playlistIndividual' id=p.id %}">{{p.num_musicas}} músicas.</a></td>
+          <td><a href="{% url 'playlistIndividual' id=p.id %}">{{p.tempo_total}}</a></td>
           <td><a href="{% url 'playlistIndividual' id=p.id %}">{{p.data_criacao}}</a></td>
         </tr>
         {% endfor %}
