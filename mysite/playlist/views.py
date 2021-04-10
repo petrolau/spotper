@@ -5,6 +5,7 @@ from django.contrib import messages
 from datetime import datetime
 from django.http import HttpResponseRedirect
 from django.http import JsonResponse
+from .forms import CreatePlaylistForm
 import requests
 
 # Create your views here.
@@ -27,6 +28,12 @@ def playlistIndividual (request, id = 1):
     faiPlay = faiPlay.json()
     faiLista = requests.get(f'{api_url}/faixa')
     faiLista = faiLista.json()
+    if request.method == 'POST':
+        data = request.POST.dict()
+        idfaixa = int(data['id_faixa'])
+        idplaylist = int(data['id_playlist'])
+        requests.delete(f'{api_url}/faixaplaylist/{idfaixa}/{idplaylist}')
+        print(data)
 
     return render(request, 'playlistInd.html', {"playInd": playInd, "faiPlay":faiPlay, "faiLista":faiLista})
 
@@ -34,8 +41,14 @@ def playlistIndividual (request, id = 1):
 
 
 def newPlaylist (request):
-    criaPlaylist = requests.post(f'{api_url}/playlist')
-    return render(request, 'newPlaylist.html', {"criaPlaylist":criaPlaylist})
+    if request.method == 'POST':
+        form = CreatePlaylistForm(request.POST)
+        if form.is_valid():
+            nome = form.cleaned_data.get('nome')
+            descricao = form.cleaned_data.get('descricao')
+            criaPlaylist = requests.post(f'{api_url}/playlist',{'nome':nome,'descricao':descricao})
+            return redirect('playlist')
+    return render(request, 'newPlaylist.html', {})
 
 
 def albumList (request):
@@ -54,8 +67,13 @@ def fullAlbum (request, id = 1):
     faiAlb = faiAlb.json()
     playAlb = requests.get(f'{api_url}/playlist')
     playAlb = playAlb.json()
-    addFaiPlay = requests.post(f'{api_url}/faixaplaylist/{id}')
-    return render(request,'fullAlbum.html', {"fullAlb":fullAlb,"faiAlb":faiAlb,"playAlb":playAlb,"addFaiPlay":addFaiPlay})
+    #Adicionar faixas a playlist
+    if request.method == 'POST':
+        data = request.POST.dict()
+        idfaixa = int(data['id_faixa'])
+        idplaylist = int(data['id_playlist'])
+        requests.post(f'{api_url}/faixaplaylist/',{'id_faixa':idfaixa,'id_playlist':idplaylist})
+    return render(request,'fullAlbum.html', {"fullAlb":fullAlb,"faiAlb":faiAlb,"playAlb":playAlb})
 
     
 def registro (request):

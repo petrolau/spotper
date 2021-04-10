@@ -20,8 +20,8 @@
       </div>
     </div>
   </div>
-  <!-- Button trigger modal
-  <button type="button" class="btn  button5" data-bs-toggle="modal" data-bs-target="#staticBackdrop">
+
+  <!-- <button type="button" class="btn  button5" data-bs-toggle="modal" data-bs-target="#staticBackdrop">
   Adicionar Músicas
   </button> -->
 
@@ -58,7 +58,7 @@
            <td>{{f.album}}</td>
            <td>{{f.tipo_composicao}}</a></td>
            <td>{{f.duracao}}</td>
-           <td><button class = "button6" type = "submit" value={{addFaixa}} formmethod = "post" onclick="http://localhost:8000/playlistIndividual">+</button></td>
+           <td><button class = "button6" type = "submit"  formmethod = "post">+</button></td>
           </form>
          </tr>
          {% endfor %}
@@ -96,6 +96,7 @@
        </thead>
        <tbody>
          {% for m in faiPlay %} 
+         
          <tr>
            <th scope="row">{{m.id_faixa}}</th>
            <td>{{m.nome_musica}}</a></td> 
@@ -104,7 +105,14 @@
            <td>{{m.nome_album}}</a></td>
            <td>{{m.nome_composicao}}</a></td>
            <td>{{m.duracao_musica}}</a></td>
-           <td><button class = "button2">x</button></td>
+           <td>
+            <form method="post">
+              {% csrf_token %}
+              <input type="hidden" value = "{{m.id_faixa}}" name="id_faixa"/>
+              <input type="hidden" value = "{{m.id_playlist}}" name="id_playlist"/>
+            <button class = "button2" type = "submit">x</button>
+            </form>
+          </td>
 
          </tr>
          {% endfor %}

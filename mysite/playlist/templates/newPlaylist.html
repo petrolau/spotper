@@ -14,8 +14,9 @@
     {% block content %}
     <br>
     <br>
-    <form action="http://localhost:5000/playlist" method="post">
+    <form method="post">
         {% csrf_token %}
+        {{ form }}
        <div class="inputs">
         <div class="form-group">
           <h1 class="inputtitle">Criar nova playlist</h1>

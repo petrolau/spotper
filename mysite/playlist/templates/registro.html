@@ -15,7 +15,7 @@
         <h2 class = "inputtitle">Sign up</h2>
         <form class = "input1title" method="post">
             {% csrf_token %}
-            {{  form| crispy }}
+            {{  form|crispy }}
           <button type = "submit" class = "button button4">Criar</button>
           {% if messages %}
           <ul class="messages">

@@ -2,9 +2,19 @@
 {% load static %}
 {% block title %} Álbum {{fullAlb.nome}} {% endblock %}
 
-
+  {% block content %}
 <body>
-    {% block content %}
+      <script>
+        function updateModal(id) {
+          document.getElementById("id_faixa").value = id;
+        }
+
+        function saveSong(id) {
+          document.getElementById("id_playlist").value = id;
+          document.getElementById("addmusica").submit();
+        }
+      </script>
+
       <div class="card mb-3 stylecard" >
         <div class="row g-0">
           <div class="col-md-4">
@@ -46,7 +56,7 @@
              <td>{{f.album}}</td>
              <td>{{f.nome_composicao}}</td>
              <td>{{f.duracao}}</td>
-             <td><button type="button" class="button6" data-bs-toggle="modal" data-bs-target="#staticBackdrop">
+             <td><button type="button" class="button6" data-bs-toggle="modal" data-bs-target="#staticBackdrop" onclick="updateModal('{{f.id}}')">
               +
               </button></td>
   
@@ -55,8 +65,13 @@
          </tbody>
        
         </table>
+        <form method="post" id ="addmusica">
+          {% csrf_token %}
+          <input type="hidden" id="id_playlist" name="id_playlist"/>
+          <input type="hidden" id="id_faixa" name="id_faixa"/>
+        </form>
 
-        <!--Modal-->
+        <!-- Modal-->
         <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
           <div class="modal-dialog">
             <div class="modal-content">
@@ -76,17 +91,16 @@
                  </tr>
                </thead>
                <tbody>
-                 <form action="https://localhost:5000/faixaplaylist/" method="post">
-                  {{ csrf_token }}
+                 
                  {% for p in playAlb %}
+                 
                  <tr>
-                   <th scope="row">{{f.id}}</th>
+                   <th scope="row">{{p.id}}</th>
                    <td>{{p.nome}}</td> 
                    <td>{{p.num_musicas}}</td>
                    <td>{{p.data_criacao}}</td>
                   
-                   <td><button class = " button6" type = "submit" formmethod = "post" onclick="">+</button></td>
-                  </form>
+                   <td><button class = "button6"  formmethod = "post" onclick="saveSong('{{p.id}}')">+</button></td>
                  </tr>
                  {% endfor %}
                  
