@@ -110,7 +110,7 @@
               {% csrf_token %}
               <input type="hidden" value = "{{m.id_faixa}}" name="id_faixa"/>
               <input type="hidden" value = "{{m.id_playlist}}" name="id_playlist"/>
-            <button class = "button2" type = "submit">x</button>
+            <button class = "button2" type = "submit" formmethod = "post">x</button>
             </form>
           </td>
 

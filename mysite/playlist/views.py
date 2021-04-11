@@ -28,12 +28,13 @@ def playlistIndividual (request, id = 1):
     faiPlay = faiPlay.json()
     faiLista = requests.get(f'{api_url}/faixa')
     faiLista = faiLista.json()
+    #Remover faixa da playlist
     if request.method == 'POST':
         data = request.POST.dict()
         idfaixa = int(data['id_faixa'])
         idplaylist = int(data['id_playlist'])
-        requests.delete(f'{api_url}/faixaplaylist/{idfaixa}/{idplaylist}')
-        print(data)
+        requests.delete(f'{api_url}/faixaplaylist/{idplaylist}/{idfaixa}')
+        return redirect(f'/playlistIndividual/{id}')
 
     return render(request, 'playlistInd.html', {"playInd": playInd, "faiPlay":faiPlay, "faiLista":faiLista})
 
